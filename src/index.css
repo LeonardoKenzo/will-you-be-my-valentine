@@ -70,3 +70,41 @@ button:focus-visible {
         background-color: #f9f9f9;
     }
 } */
+body {
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #fff0f5 0%, #ffd6e7 100%);
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #c0336a;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) scale(1); opacity: 0.85; }
+  80%  { opacity: 0.5; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+.floating-heart {
+  position: fixed;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  font-size: 1.4rem;
+  z-index: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, #e0508033 2px, transparent 2px),
+    radial-gradient(circle, #ff80ab22 3px, transparent 3px);
+  background-size: 60px 60px, 97px 97px;
+  background-position: 0 0, 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
